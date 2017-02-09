@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<dubbo:application name="foxdd-dubbo-provider"/>
+	
+	<dubbo:registry id="zk1" address=""  protocol="zookeeper" />
+	
+	<dubbo:protocol id="db1" name="dubbo" port="20886"/>
+	
+	<dubbo:provider registry="zk1" protocol="db1" />
+	
+	<dubbo:service interface="com.foxdd.dubbo.dubbo_interface.SpeakInterface" ref="speakInterface" />
+
+</beans>
