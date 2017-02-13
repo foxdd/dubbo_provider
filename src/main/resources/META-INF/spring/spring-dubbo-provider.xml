@@ -8,12 +8,14 @@
 
 	<dubbo:application name="foxdd-dubbo-provider"/>
 	
-	<dubbo:registry id="zk1" address=""  protocol="zookeeper" />
+	<dubbo:registry id="zk1" address="192.168.1.10:2181"  protocol="zookeeper" />
 	
 	<dubbo:protocol id="db1" name="dubbo" port="20886"/>
 	
 	<dubbo:provider registry="zk1" protocol="db1" />
 	
-	<dubbo:service interface="com.foxdd.dubbo.dubbo_interface.SpeakInterface" ref="speakInterface" />
+	<dubbo:service interface="com.foxdd.dubbo.dubbo_interface.SpeakInterface" ref="speakInterface" version="1.0.0"/>
+	
+	<dubbo:service interface="com.foxdd.dubbo.dubbo_interface.SpeakInterface" ref="speakInterfacev2" version="2.0.0"/>
 
 </beans>

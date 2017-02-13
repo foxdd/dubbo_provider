@@ -12,6 +12,8 @@ import com.foxdd.dubbo.dubbo_interface.SpeakInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { 
+		"classpath*:/META-INF/spring/spring-context.xml",
+		"classpath*:/META-INF/spring/spring-dubbo-provider.xml",
 		"classpath*:/META-INF/spring/spring-dubbo-consumer.xml"})
 public class BaseTest {
 
